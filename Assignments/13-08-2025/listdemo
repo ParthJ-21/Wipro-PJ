@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ListDemo</title>
+</head>
+<body>
+    <h2>EX7</h2>
+    <h2>EX8</h2>
+    <h2>EX9</h2>
+    <h2>EX10</h2>
+
+    <script src="demolist.js"></script>
+</body>
+</html>

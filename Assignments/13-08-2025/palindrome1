@@ -1,0 +1,16 @@
+let str1 = "mom"
+let reversed1 = str1.split("").reverse().join("");
+let str2 = "mother"
+let reversed2 = str2.split("").reverse().join("");
+if(str1==reversed1){
+    console.log("palindrome")
+}
+else{
+    console.log("not a palindrome")
+}
+if(str2==reversed2){
+    console.log("palindrome")
+}
+else{
+    console.log("not a palindrome")
+}

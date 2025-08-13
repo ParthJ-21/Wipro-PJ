@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello JS</title>
+</head>
+<body>
+    <h1 id="head">This is 1st text</h1>
+    <input type="text" id="Input" placeholder="Type here">
+    <button id="btn1" onclick="Length()">Find Length</button>
+    <script src="hello.js"></script>
+</body>
+    
+</html>

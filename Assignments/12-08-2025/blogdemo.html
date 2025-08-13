@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Blog Post</title>
+
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: white;
+    color: black;
+    line-height: 1.6;
+  }
+  a {
+    text-decoration: none;
+    color: #0077b6;
+  }
+  a:hover {
+    color: blue
+  }
+  img {
+    max-width: 20%;
+    display: block;
+  }
+
+  header {
+    background-color: white;
+    border-bottom: 1px solid rgb(247, 228, 228);
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  nav a {
+    font-weight: bold;
+    color: blue;
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    padding: 2opx;
+    flex-wrap: wrap;
+  }
+  main {
+    flex: 3;
+    min-width: 300px;
+  }
+  aside {
+    flex: 1;
+    min-width: 250px;
+  }
+
+
+  main section {
+    margin-bottom: 50px;
+  }
+  main h2 {
+    margin-bottom: 20px;
+    color: blue;
+  }
+  .cta-btn {
+    background-color: blue;
+    color: white;
+    padding: 5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .cta-btn:hover {
+    background-color: blue;
+  }
+  .about-author, .recent-posts {
+    background-color: white;
+    padding: 5;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  .about-author img {
+    border-radius: 50%;
+    width: 80px;
+    margin-bottom: 10px;
+  }
+  .social-links a {
+    margin-right: 20px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+    nav {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <main>
+    <section>
+      <p>Data science enthusiast skilled in turning raw data into actionable insights.
+Passionate about using analytics, statistics, and machine learning to solve real-world problems.</p>
+    </section>
+
+    <section>
+      <h2>What is Data Science?</h2>
+      <p>Data science is the field that combines statistics, programming, and domain knowledge to extract meaningful insights from data.
+It involves collecting, cleaning, analyzing, and visualizing data, often using machine learning and AI to make predictions or guide decision-making.</p>
+      <img src="C:\Users\PARTH\Downloads\Data-Science-4.webp" alt="Section 1 Image">
+    </section>
+
+    <section>
+      <h2>Data science Life Cycle</h2>
+      <p>ChatGPT said:
+
+The Data Science Life Cycle is the step-by-step process data scientists follow to extract insights and build solutions from data.
+A common version has these stages:
+</p>
+        <ol>
+    Problem Definition – Clearly define the business or research problem you want to solve.
+
+    Data Collection – Gather relevant data from databases, APIs, sensors, or other sources.
+
+    Data Cleaning & Preparation:Remove errors, handle missing values, and transform data into a usable format.
+
+    Exploratory Data Analysis (EDA):Analyze data patterns, trends, and correlations using statistical and visualization techniques.
+
+    Modeling:Apply machine learning or statistical models to learn from data and make predictions.
+
+    Evaluation:Test the model's performance using metrics (accuracy, precision, recall, etc.).
+
+    Deployment:Integrate the model into a production environment for real-world use.
+
+    Monitoring & Maintenance:Track performance over time and update the model when needed.
+    </ol>
+      <img src="C:\Users\PARTH\Downloads\Understanding-Data-Science.png" alt="Section 2 Image">
+    </section>
+
+    <section>
+      <h2>Data science project plan:</h2>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+      <img src="C:\Users\PARTH\Downloads\How_to_create_a_data_science_project_plan.png" alt="Section 3 Image">
+    </section>
+
+    <button class="cta-btn">Read More</button>
+  </main>
+
+  <aside>
+    <div class="about-author">
+      <img src="C:\Users\PARTH\Downloads\WhatsApp_Image_2023-08-02_at_22.22.51-removebg-preview(1).jpg" alt="Parth Jaiswal">
+      <h3>Parth Jaiswal</h3>
+      <p>Passionate software developer skilled in crafting clean, efficient, and scalable solutions.
+Loves turning complex problems into simple, elegant code that delivers real impact.</p>
+      <div class="social-links">
+        <a href="#">Linkdin</a>
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+
+    <div class="recent-posts">
+      <h3>Recent Posts</h3>
+      <ul>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Angular</a></li>
+        <li><a href="#">Python</a></li>
+        <li><a href="#">C++</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+<footer>
+  <p>&copy; 2025 My Blog | Follow us:
+    <a href="#">ContactUs</a>
+  </p>
+</footer>
+
+</body>
+</html>

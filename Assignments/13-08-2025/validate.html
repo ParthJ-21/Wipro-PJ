@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EX13</title>
+    <style>
+        body{
+            background-color: rgba(0, 0, 0, 0.349);
+        }
+        .container {
+            align-self: center;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 5px black;
+            width: 300px;
+            margin-top: 200px;
+            margin-left: 600px;
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        .error {
+            color: red;
+            font-size: 12px;
+            height: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blueviolet;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+    <div>
+        <label>Email:</label>
+        <input type="text" id="email" onblur="validateEmail()">
+        <div id="emailError" class="error"></div>
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" id="password" onblur="validatePassword()">
+        <div id="passwordError" class="error"></div>
+    </div>
+
+    <button onclick="validateForm()">Login</button>
+</div>
+
+   <script src="validate.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+ let cities = ["Mumbai", "Delhi", "Chennai", "Bangalore", "Kolkata", "Pune"];
+
+        function loadCities() {
+            cities.sort(); // Sort directly
+
+            let dropdown = document.getElementById("cityDropdown");
+            dropdown.innerHTML = '<option value="">-- Select a city --</option>';
+
+            // Arrow function (lambda) to add cities
+            cities.forEach(city => {
+                let option = document.createElement("option");
+                option.value = city;
+                option.text = city;
+                dropdown.appendChild(option);
+            });
+        }

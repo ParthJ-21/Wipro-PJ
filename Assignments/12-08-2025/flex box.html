@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Product Cards</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 15px;
+      flex: 1;
+      border-radius: 5px;
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .product {
+      width: 250px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Pick up where you left off</h2>
+      <div class="products">
+        <div class="product">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.7fSp34fs_3aN38XaipxuawHaEj?pid=Api&P=0&h=180" alt="Product 1">
+          <p>cycle1</p>
+        </div>
+        <div class="product">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.aVwCyRilq5kYDOtjDLx3_wHaEu?pid=Api&P=0&h=180" alt="Product 2">
+          <p>cycle2</p>
+        </div>
+        <div class="product">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.g2jqukIDklQYkWfiRZUKLQHaHa?pid=Api&P=0&h=180" alt="Product 3">
+          <p>cycle3</p>
+        </div>
+        <div class="product">
+          <img src="http://img.mensxp.com/media/content/2019/Jul/image-3-1562230006.jpg" alt="Product 4">
+          <p>cycle4</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Card -->
+    <div class="card">
+      <h2>Keep shopping for</h2>
+      <div class="products">
+        <div class="product">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.OgWSSeParwCzNn2qb7jrrwHaE-?pid=Api&P=0&h=180" alt="Product 5">
+          <p>Smartphones</p>
+        </div>
+        <div class="product">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.cSuKNQRxqhvr0UnPDBFpNgHaHa?pid=Api&P=0&h=180" alt="Product 6">
+          <p>Jackets</p>
+        </div>
+        <div class="product">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.M9_1wpEf1J3SdPWsR0dWewHaE7?pid=Api&P=0&h=180" alt="Product 7">
+          <p>chocolates</p>
+        </div>
+        <div class="product">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.4m-3DCXoKwN4oOgKG2I13gHaHa?pid=Api&P=0&h=180" alt="Product 8">
+          <p>Watches</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
