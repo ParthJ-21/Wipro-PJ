@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EX1,Ex2</title>
+</head>
+<body>
+    <h2>This is Arrow Function Impl</h2>
+   <script src="arrowdemo.js"></script>
+</body>
+</html>

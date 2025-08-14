@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EX4</title>
+</head>
+<body>
+    <h1>Bank Account</h1>
+
+    <script src="accClassdemo.js"></script>
+</body>
+</html>
