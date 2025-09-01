@@ -1,0 +1,107 @@
+/* General Section */
+section {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Card */
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings */
+h4 {
+  font-weight: 600;
+  color: #333;
+}
+
+p.text-muted {
+  font-size: 14px;
+}
+
+/* Payment Plan Box */
+.plan-box {
+  padding: 20px 25px;
+  border: 2px solid #0d6efd;
+  border-radius: 15px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-box img {
+  border-radius: 12px;
+}
+
+.plan-box .h5 {
+  font-weight: 600;
+}
+
+.plan-box .h2 {
+  font-weight: 700;
+  color: #0d6efd;
+}
+
+/* Dropdown */
+select.form-select {
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  transition: border 0.2s;
+}
+
+select.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.4);
+}
+
+/* Payment Method Box */
+.payment-method {
+  margin-top: 20px;
+  padding: 15px 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.payment-method img {
+  border-radius: 12px;
+}
+
+.payment-method input {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* Section Title */
+h6.text-primary {
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 13px;
+}
+
+/* Button */
+button.btn-primary {
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(13, 110, 253, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: #0b5ed7;
+}

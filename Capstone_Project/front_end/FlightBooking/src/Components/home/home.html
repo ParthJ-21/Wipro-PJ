@@ -1,0 +1,24 @@
+<div class="search-box">
+
+  <div class="field">
+    <label>From</label>
+    <input [(ngModel)]="src" placeholder="FROM" />
+  </div>
+
+  <button class="swap-btn" (click)="swapLocations()" title="Swap">
+    ⇄
+  </button>
+
+  <div class="field">
+    <label>To</label>
+    <input [(ngModel)]="dst" placeholder="TO" />
+  </div>
+
+
+  <div class="field">
+    <label>Departure Date</label>
+    <input type="date" [(ngModel)]="date" />
+  </div>
+
+  <button class="search-btn" (click)="onSearch()">Search Flights</button>
+</div>

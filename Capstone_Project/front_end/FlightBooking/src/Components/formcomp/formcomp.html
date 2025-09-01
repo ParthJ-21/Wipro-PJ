@@ -1,0 +1,72 @@
+<div class="form-container">
+  <h2>Passenger Details</h2>
+
+  <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        type="text"
+        [(ngModel)]="booking.passengerName"
+        name="passengerName"
+        required
+        placeholder="Enter full name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        id="age"
+        type="number"
+        [(ngModel)]="booking.passengerAge"
+        name="passengerAge"
+        required
+        placeholder="Enter age"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select
+        id="gender"
+        [(ngModel)]="booking.gender"
+        name="gender"
+        required
+      >
+        <option value="">--Select--</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        [(ngModel)]="booking.email"
+        name="email"
+        required
+        placeholder="Enter email address"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input
+        id="phone"
+        type="text"
+        [(ngModel)]="booking.phone"
+        name="phone"
+        required
+        placeholder="Enter phone number"
+      />
+    </div>
+
+    <button type="submit" [disabled]="!f.valid">
+      Confirm Booking
+    </button>
+  </form>
+</div>

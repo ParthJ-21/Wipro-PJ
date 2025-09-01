@@ -1,0 +1,218 @@
+:host {
+  font-family: "Inter", sans-serif;
+  display: block;
+  background: linear-gradient(180deg, #0f172a, #071033);
+  min-height: 100vh;
+  padding: 2rem;
+  color: #e6edf3;
+}
+
+/* Layout */
+.wrap {
+  width: min(1100px, 96%);
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* Card */
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6ee7b7, #60a5fa, #a78bfa);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #07203a;
+}
+
+.title h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.title p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.pnr {
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  text-align: center;
+  font-weight: 600;
+  border: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.info-item {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.value {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.section h3 {
+  margin: 20px 0 10px;
+  font-size: 14px;
+  color: #dfe9f4;
+}
+
+.flight-card {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.badge {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  display: grid;
+  place-items: center;
+}
+
+.flight-meta .route {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.flight-meta .when {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.flight-stats {
+  text-align: right;
+}
+
+.flight-stats .price {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Right Summary */
+.summary {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 16px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.summary h4 {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.price-big {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.price-sub {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.breakdown {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 6px 0;
+}
+
+.line.total {
+  font-weight: 800;
+  color: #fff;
+}
+
+.cta {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6ee7b7, #60a5fa, #a78bfa);
+  color: #07203a;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.tiny {
+  margin-top: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+}

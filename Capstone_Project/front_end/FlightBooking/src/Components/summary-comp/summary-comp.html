@@ -1,0 +1,79 @@
+<div class="wrap" role="main">
+
+  <!-- LEFT: Booking details -->
+  <section class="card" aria-labelledby="booking-heading">
+    <div class="header">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">FLY</div>
+        <div class="title">
+          <h1 id="booking-heading">Booking Summary</h1>
+          <p>Review your booking details and passenger information</p>
+        </div>
+      </div>
+
+      <div class="pnr" aria-label="PNR">
+        <strong>{{ booking.pnr }}</strong>
+        <span>Booking Reference</span>
+      </div>
+    </div>
+
+    <div class="info-grid" aria-hidden="false">
+      <div class="info-item">
+        <div class="label">Passenger</div>
+        <div class="value">{{ booking.passengerName }}</div>
+      </div>
+
+      <div class="info-item">
+        <div class="label">Age / Gender</div>
+        <div class="value">{{ booking.passengerAge }} yrs • {{ booking.gender }}</div>
+      </div>
+
+      <div class="info-item">
+        <div class="label">Email</div>
+        <div class="value">{{ booking.email }}</div>
+      </div>
+
+      <div class="info-item">
+        <div class="label">Phone</div>
+        <div class="value">{{ booking.phone }}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Trip details</h3>
+      <div class="flight-card">
+        <div class="badge">✈︎</div>
+
+        <div class="flight-meta">
+          <div class="route">{{ flight.source }} → {{ flight.destination }}</div>
+          <div class="when">{{ flight.date }} • {{ flight.airline || 'Airline' }}</div>
+        </div>
+
+        <div class="flight-stats">
+          <div class="price">₹{{ booking.totalPrice }}</div>
+          <div>x {{ booking.numberOfTicket }} tickets</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIGHT: Payment summary -->
+  <aside class="summary">
+    <h4>Payment summary</h4>
+    <div class="price-big">₹{{ booking.totalPrice }}</div>
+    <div class="breakdown">
+      <div class="line total">
+        <div>Total</div>
+        <div>₹{{ booking.totalPrice }}</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <button class="btn btn-primary" (click)="proceedToPay()">Proceed to Payment</button>
+      <button class="btn btn-secondary">Receipt</button>
+    </div>
+
+    <div class="tiny">By continuing you agree to the carrier's terms & conditions.</div>
+  </aside>
+
+</div>
