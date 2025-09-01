@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { PaymentService } from '../../Service/payment-service';
 import { BookingService } from '../../Service/booking-service';
@@ -14,41 +14,43 @@ import { IFlight } from '../../Interface/iflight';
   templateUrl: './payment.html',
   styleUrl: './payment.css'
 })
-export class Payment{
+export class Payment implements OnInit{
   booking!: IBooking;
-  flight!: IFlight;
-  payment:IPayment ={
-  bookingId: 0,
-  amount: 0,
-  modeOfPayment: '',
-  accountNumber: '',
-  cvv: 0
+  payment: IPayment = {
+    bookingId: 0,
+    amount: 0,
+    modeOfPayment: '',
+    accountNumber: '',
+    cvv: 0
   };
 
-
-   constructor(private router : Router,
+  constructor(
+    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private bookingService: BookingService
-
-  ){
-    const nav = this.router.getCurrentNavigation();
-        const state = nav?.extras.state as { booking: IBooking, flight: IFlight  };
-        if (state) {
-        this.booking = state.booking;
-        this.flight = state.flight;
-      }
-  }
-
+    private bookingService: BookingService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
-    this.payment.amount = this.flight.price;
-    this.payment.bookingId = this.flight.id;
-    console.log("this is booking id = " + this.payment.bookingId);
-    console.log("this is total price = " + this.payment.amount);
+    this.activatedRoute.params.subscribe(params => {
+      const bookingId = params['id'];
+      if (bookingId) {
+        this.bookingService.getBooking(bookingId).subscribe(b => {
+          this.booking = b;
+          this.payment.amount = b.totalPrice!; // safer than flight.price
+          this.payment.bookingId = b.id!;
+          console.log("Booking fetched:", this.booking);
+          console.log("Payment prepared:", this.payment);
+        });
+      } else {
+        console.error("No bookingId in route!");
+        this.router.navigate(['/']); // fallback
+      }
+    });
   }
 
   pay() {
-    let payment: IPayment = {
+    const payment: IPayment = {
       bookingId: this.payment.bookingId,
       amount: this.payment.amount,
       modeOfPayment: this.payment.modeOfPayment,
@@ -60,13 +62,13 @@ export class Payment{
       console.log('Payment Response:', data);
       this.router.navigate(['/success']);
 
-        this.bookingService.downloadTicket(data.bookingId).subscribe((pdf: Blob) => {
-          const url = window.URL.createObjectURL(pdf);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `ticket_${data.bookingId}.pdf`;
-          a.click();
-        });
+      this.bookingService.downloadTicket(this.booking.pnr!).subscribe((pdf: Blob) => {
+    const url = window.URL.createObjectURL(pdf);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `ticket_${this.booking.pnr}.pdf`;
+    a.click();
+      });
     });
   }
 }

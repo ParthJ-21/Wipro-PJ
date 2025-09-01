@@ -22,7 +22,10 @@ private baseUrl = `${Con1.apiUrl}/bookings`;
     return this.http.post<IPayment>(`${this.baseUrl}/pay`, payment);
   }
 
-  downloadTicket(pnr: number | string): Observable<Blob> {
-    return this.http.get(`${this.baseUrl}/${pnr}/pdf`, { responseType: 'blob' });
-  }
+  downloadTicket(pnr: string): Observable<Blob> {
+  return this.http.get(`${this.baseUrl}/${pnr}/pdf`, { responseType: 'blob' });
+}
+  getBooking(bookingId: number | string): Observable<IBooking> {
+  return this.http.get<IBooking>(`${this.baseUrl}/${bookingId}`);
+}
 }

@@ -23,6 +23,6 @@ export class SummaryComp {
   }
 
   proceedToPay() {
-    this.router.navigate(['/payment', this.booking.id, this.booking.totalPrice], { state: { booking: this.booking } });
+    this.router.navigate(['/payment', this.booking.id], { state: { booking: this.booking } });
   }
 }

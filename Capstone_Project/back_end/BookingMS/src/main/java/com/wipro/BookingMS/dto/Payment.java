@@ -9,9 +9,11 @@ import lombok.Data;
 @Data 
 public class Payment {
 
-    private Long id;
-    private int bookingId;
-    private double amount;
-    private String status;
-    
+	int id;
+	String bookingId;
+	double amount;
+	String paymentStatus;
+	String modeOfPayment; 
+	String accountNumber;
+	int cvv;
 }

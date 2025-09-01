@@ -21,7 +21,6 @@ export class Booking implements OnInit {
   dst!: string;
   date!: string;
 
-  // Filters
   airlines: string[] = [];
   airlineFilters: { [key: string]: boolean } = {};
   timeFilters = { early: false, late: false };
@@ -47,7 +46,6 @@ export class Booking implements OnInit {
             this.filteredFlights = [...this.flights];
             this.searched = true;
 
-            // Extract airlines dynamically
             this.airlines = [...new Set(this.flights.map(f => f.airline))];
             this.airlines.forEach(a => (this.airlineFilters[a] = false));
 
@@ -63,14 +61,12 @@ export class Booking implements OnInit {
 
   applyFilters() {
     this.filteredFlights = this.flights.filter(f => {
-      // Time filter
       let depHour = parseInt(f.departureTime.split(':')[0], 10);
       let matchTime =
         (!this.timeFilters.early && !this.timeFilters.late) ||
         (this.timeFilters.early && depHour < 12) ||
         (this.timeFilters.late && depHour >= 12);
 
-      // Airline filter
       let selectedAirlines = Object.keys(this.airlineFilters).filter(
         k => this.airlineFilters[k]
       );
@@ -85,7 +81,7 @@ export class Booking implements OnInit {
   const [ah, am] = arr.split(':').map(Number);
   let depMin = dh * 60 + dm;
   let arrMin = ah * 60 + am;
-  if (arrMin < depMin) arrMin += 24 * 60; // overnight flights
+  if (arrMin < depMin) arrMin += 24 * 60;
   let dur = arrMin - depMin;
   let hrs = Math.floor(dur / 60);
   let mins = dur % 60;

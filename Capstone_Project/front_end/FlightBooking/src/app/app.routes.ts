@@ -10,7 +10,7 @@ export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' }, // default route
   { path: 'home', component: Home },
   { path: 'flights', component: Booking },
-  { path: 'payment/:bookingId/:price', component: Payment },
+  { path: 'payment/:id', component: Payment },
   { path: 'passenger', component: Formcomp },
   { path: 'summary', component: SummaryComp },
   { path: 'success', component: SuccessComp }

@@ -1,67 +1,92 @@
-    #card {
-      position: relative;
-      width: 320px;
-      display: block;
-      margin: 40px auto;
-      text-align: center;
-      font-family: 'Source Sans Pro', sans-serif;
-    }
-        #upper-side {
-      padding: 2em;
-      background-color: #8BC34A;
-      display: block;
-      color: #fff;
-      border-top-right-radius: 8px;
-      border-top-left-radius: 8px;
-    }
-        #checkmark {
-      font-weight: lighter;
-      fill: #fff;
-      margin: -3.5em auto auto 20px;
-    }
-        #status {
-      font-weight: lighter;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 1em;
-      margin-top: -.2em;
-      margin-bottom: 0;
-    }
-        #lower-side {
-      padding: 2em 2em 5em 2em;
-      background: #fff;
-      display: block;
-      border-bottom-right-radius: 8px;
-      border-bottom-left-radius: 8px;
-    }
-         #message {
-      margin-top: -.5em;
-      color: #757575;
-      letter-spacing: 1px;
-    }
-        #contBtn {
-      position: relative;
-      top: 1.5em;
-      text-decoration: none;
-      background: #8bc34a;
-      color: #fff;
-      margin: auto;
-      padding: .8em 3em;
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.21);
-      border-radius: 25px;
-      -webkit-transition: all .4s ease;
-    		-moz-transition: all .4s ease;
-    		-o-transition: all .4s ease;
-    		transition: all .4s ease;
-    }
-    #contBtn:hover {
-      -webkit-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      -moz-box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      box-shadow: 0px 15px 30px rgba(50, 50, 50, 0.41);
-      -webkit-transition: all .4s ease;
-    		-moz-transition: all .4s ease;
-    		-o-transition: all .4s ease;
-    		transition: all .4s ease;
-    }
+/* Container */
+.success-card {
+  max-width: 400px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  overflow: hidden;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Header */
+.success-header {
+  background: linear-gradient(135deg, #28a745, #5ddf74);
+  padding: 30px 20px;
+  color: #fff;
+}
+
+.status {
+  margin: 15px 0 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* Body */
+.success-body {
+  padding: 25px 20px;
+}
+
+.message {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.continue-btn {
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.continue-btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Checkmark SVG */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  stroke-width: 6;
+  stroke: #fff;
+  fill: none;
+  margin: 0 auto;
+}
+
+.checkmark-circle {
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+  stroke: #fff;
+  animation: circleStroke 1s forwards ease-out;
+}
+
+.checkmark-check {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: checkStroke 0.6s 0.8s forwards ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes circleStroke {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes checkStroke {
+  to { stroke-dashoffset: 0; }
+}

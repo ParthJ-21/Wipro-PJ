@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IBooking } from '../../Interface/ibooking';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ export class Formcomp {
     numberOfTicket: 1
   };
 
-  constructor(private router: Router, private bookingService: BookingService) {
+  constructor(private router: Router, private bookingService: BookingService,private cdr: ChangeDetectorRef) {
     const nav = this.router.getCurrentNavigation();
     const state = nav?.extras.state as { flight: IFlight };
     this.flight = state.flight;

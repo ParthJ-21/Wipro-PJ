@@ -1,6 +1,7 @@
 package com.wipro.BookingMS.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +60,10 @@ public class BookingServiceImpl implements BookingService {
         int number = 1000 + random.nextInt(9000); // 4-digit random number
         return "PNR-" + number;
     }
+	@Override
+	public Booking getBookingById(int id) {
+	    return repo.findById(id).orElse(null);
+	    }
 
 
 }

@@ -2,6 +2,7 @@
   <h2>Passenger Details</h2>
 
   <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+    <!-- Name -->
     <div class="form-group">
       <label for="name">Name</label>
       <input
@@ -10,10 +11,16 @@
         [(ngModel)]="booking.passengerName"
         name="passengerName"
         required
+        minlength="3"
         placeholder="Enter full name"
+        #name="ngModel"
       />
+      @if (name.invalid && name.touched) {
+        <div class="error">Name is required (min 3 characters).</div>
+      }
     </div>
 
+    <!-- Age -->
     <div class="form-group">
       <label for="age">Age</label>
       <input
@@ -22,10 +29,17 @@
         [(ngModel)]="booking.passengerAge"
         name="passengerAge"
         required
+        min="1"
+        max="120"
         placeholder="Enter age"
+        #age="ngModel"
       />
+      @if (age.invalid && age.touched) {
+        <div class="error">Age must be between 1 and 120.</div>
+      }
     </div>
 
+    <!-- Gender -->
     <div class="form-group">
       <label for="gender">Gender</label>
       <select
@@ -33,14 +47,19 @@
         [(ngModel)]="booking.gender"
         name="gender"
         required
+        #gender="ngModel"
       >
         <option value="">--Select--</option>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Other</option>
+        @for (g of ['Male', 'Female', 'Other']; track g) {
+          <option [value]="g">{{ g }}</option>
+        }
       </select>
+      @if (gender.invalid && gender.touched) {
+        <div class="error">Gender is required.</div>
+      }
     </div>
 
+    <!-- Email -->
     <div class="form-group">
       <label for="email">Email</label>
       <input
@@ -49,10 +68,16 @@
         [(ngModel)]="booking.email"
         name="email"
         required
+        email
         placeholder="Enter email address"
+        #email="ngModel"
       />
+      @if (email.invalid && email.touched) {
+        <div class="error">Enter a valid email address.</div>
+      }
     </div>
 
+    <!-- Phone -->
     <div class="form-group">
       <label for="phone">Phone</label>
       <input
@@ -61,11 +86,17 @@
         [(ngModel)]="booking.phone"
         name="phone"
         required
-        placeholder="Enter phone number"
+        pattern="^[0-9]{10}$"
+        placeholder="Enter 10-digit phone number"
+        #phone="ngModel"
       />
+      @if (phone.invalid && phone.touched) {
+        <div class="error">Phone number must be exactly 10 digits.</div>
+      }
     </div>
 
-    <button type="submit" [disabled]="!f.valid">
+    <!-- Submit -->
+    <button type="submit" [disabled]="!f.valid" class="submit-btn">
       Confirm Booking
     </button>
   </form>

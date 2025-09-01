@@ -1,1 +1,1 @@
-create database flightpaymentdb;
+select * from payment;

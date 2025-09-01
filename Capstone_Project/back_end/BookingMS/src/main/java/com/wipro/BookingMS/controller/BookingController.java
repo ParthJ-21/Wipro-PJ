@@ -75,4 +75,13 @@ public class BookingController {
 	                .contentType(MediaType.APPLICATION_PDF)
 	                .body(baos.toByteArray());
 	    }
+	    @GetMapping("/{id}")
+	    public ResponseEntity<Booking> getBookingById(@PathVariable int id) {
+	        Booking booking = bookingService.getBookingById(id);
+	        if (booking != null) {
+	            return ResponseEntity.ok(booking);
+	        } else {
+	            return ResponseEntity.notFound().build();
+	        }
+	    }
 }
