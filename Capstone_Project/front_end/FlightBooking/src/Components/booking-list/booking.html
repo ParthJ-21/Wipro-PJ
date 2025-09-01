@@ -1,6 +1,5 @@
 <div class="booking-container">
   @if (searched) {
-    <!-- LEFT FILTER PANEL -->
     <aside class="filters">
       <h3>Applied Filters</h3>
       <div class="applied-filters">
@@ -41,18 +40,15 @@
       </section>
     </aside>
 
-    <!-- RIGHT FLIGHT LIST -->
     <main class="flights">
       @if (filteredFlights.length > 0) {
         @for (f of filteredFlights; track f.id) {
           <div class="flight-row">
-            <!-- Airline Info -->
             <div class="airline">
               <span>{{ f.airline }}</span>
               <small>{{ f.flightNumber }}</small>
             </div>
 
-            <!-- Times -->
             <div class="times">
               <h3>{{ f.departureTime }}</h3>
               <span>{{ f.source }}</span>
@@ -69,7 +65,6 @@
               <span>{{ f.destination }}</span>
             </div>
 
-            <!-- Price + Book -->
             <div class="price-box">
               <h3>₹{{ f.price }}</h3>
               <button class="book-btn"  (click)="onBook(f)">Book</button>
